@@ -44,6 +44,7 @@ function wireScroller(trackSelector,previousSelector,nextSelector,cardSelector){
 }
 wireScroller('.notice-scroller','.notice-prev','.notice-next','article');
 wireScroller('.institution-track','.institution-prev','.institution-next','.institution-card');
+wireScroller('.research-track','.research-prev','.research-next','a');
 wireScroller('.achievers','.placement-prev','.placement-next','article');
 
 document.querySelector('.finder')?.addEventListener('submit',event=>event.preventDefault());
