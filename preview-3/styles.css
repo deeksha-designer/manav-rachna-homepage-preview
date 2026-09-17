@@ -147,3 +147,13 @@ footer>.footer-services{margin-left:0;margin-right:0}
 .sports-number>div{display:flex;align-items:flex-end;gap:14px;margin-top:auto}.sports-number b{font:800 clamp(4.4rem,6vw,6.4rem)/.8 Manrope,sans-serif;letter-spacing:-.08em}.sports-number span{font:700 1rem/1.15 Manrope,sans-serif;padding-bottom:3px}
 .sports-number p{font-size:.82rem;line-height:1.5;color:#f8d9df;margin:18px 0 12px;max-width:260px}.sports-number a{min-height:42px;margin-top:0;padding:10px 14px;background:#fff;color:var(--red-dark)!important}.sports-number a i{display:grid;place-items:center;width:16px;height:16px;line-height:1;font-style:normal}
 @media(max-width:720px){.button,.apply-link{min-height:48px}.sports-number{height:auto!important;min-height:320px!important}.sports-number>div{margin-top:46px}.sports-number p{max-width:100%}}
+
+/* Consistent image corner system */
+:root{--image-radius:16px}
+main img{border-radius:var(--image-radius)}
+.hero-media,.level-image,.study-collage,.institution-feature,.admissions-head,.impact-image,.placement-visual,.alumni-portrait,.glance,.global-visual,.campus-gallery figure,.sports-mosaic figure,.about-image,.update-grid article,.virtual-tour{overflow:hidden}
+.hero-media,.glance,.virtual-tour{border-radius:0}
+.hero-media>img,.glance>img,.virtual-tour>img{border-radius:0}
+.institution-feature-image{border-radius:0}
+.brand img,.global-logos img,.corporate-network img,footer img{border-radius:0}
+@media(max-width:720px){:root{--image-radius:12px}}
