@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A 2026 homepage concept for Manav Rachna—program discovery, research, placements and campus life in one clear journey." />
+  <title>Manav Rachna — Homepage Concept 2026</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip" href="#main">Skip to main content</a>
+  <div class="utility-bar"><div><span>Admissions open for 2027–28</span><a href="#admissions">Explore admissions ↗</a></div><nav aria-label="Utility navigation"><a href="#institutions">Institutions</a><a href="#experience">Alumni</a><a href="#top">Student ERP</a><a href="#experience">Virtual tour</a><a href="#enquiry">Contact</a></nav></div>
+  <header class="site-header">
+    <div class="nav-wrap">
+      <a class="brand" href="#top" aria-label="Manav Rachna home"><img src="assets/manav-rachna-logo.png" alt="Manav Rachna" /></a>
+      <nav class="desktop-nav" id="desktopNav" aria-label="Primary navigation">
+        <button class="nav-item" data-menu="about">About</button>
+        <button class="nav-item" data-menu="academics">Academics & Programs</button>
+        <button class="nav-item" data-menu="research">Research</button>
+        <button class="nav-item" data-menu="experience">Life @ MR</button>
+        <button class="nav-item" data-menu="global">International</button>
+        <a href="#placements">Placements</a>
+      </nav>
+      <div class="nav-actions"><button class="icon-btn" id="searchBtn" aria-label="Open search">⌕</button><a class="apply-btn" href="#admissions">Apply now <span>↗</span></a><button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button></div>
+    </div>
+    <div class="mega-menu" id="megaMenu" aria-hidden="true"></div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <img class="hero-image" src="assets/campus-hero.png" alt="Students collaborating while walking through a contemporary university campus" />
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <div class="eyebrow light"><span></span> Manav Rachna Vidyanatariksha</div>
+        <h1>Learn widely.<br /><em>Lead boldly.</em></h1>
+        <p>A multidisciplinary education shaped by research, industry and a campus that helps every learner find their direction.</p>
+        <div class="hero-actions"><a class="primary-btn" href="#programs">Find your program <span>↗</span></a><a class="text-link light-link" href="#experience">Explore campus life <span>→</span></a></div>
+      </div>
+    </section>
+
+    <section class="program-search" aria-label="Find a program"><div><span>Find a program</span><h2>Search by what inspires you.</h2></div><form onsubmit="return false"><label><span>Keyword</span><input type="search" placeholder="e.g. Computer Science, MBA, Design" /></label><label><span>Study level</span><select><option>All levels</option><option>Undergraduate</option><option>Postgraduate</option><option>Doctoral</option></select></label><label><span>Institution</span><select><option>All institutions</option><option>MRIIRS</option><option>MRU</option><option>MRDC</option><option>MR Online</option></select></label><button type="submit">Search programs ↗</button></form></section>
+
+    <section class="quick-paths" aria-label="Quick links">
+      <a href="#programs"><span class="line-icon">⌁</span><span><small>I want to</small>Explore programs</span><b>→</b></a>
+      <a href="#admissions"><span class="line-icon">◎</span><span><small>I want to</small>Apply for admission</span><b>→</b></a>
+      <a href="#experience"><span class="line-icon">◇</span><span><small>I want to</small>Visit the campus</span><b>→</b></a>
+      <a href="#research"><span class="line-icon">✦</span><span><small>I want to</small>Partner in research</span><b>→</b></a>
+    </section>
+
+    <section class="impact-strip" aria-label="Manav Rachna highlights"><div><strong>43,000+</strong><span>Alumni worldwide</span></div><div><strong>135+</strong><span>Global collaborations</span></div><div><strong>60 LPA</strong><span>Highest package offered</span></div></section>
+
+    <section class="study-intro section"><div class="study-image"><img src="assets/authentic/computer-lab.webp" alt="Manav Rachna students learning in a computer laboratory" /></div><div><div class="eyebrow"><span></span> Study at Manav Rachna</div><h2>Education with<br /><em>purpose and possibility.</em></h2><p>Learning at Manav Rachna combines academic depth, creative exploration, industry exposure and access to current research. Students learn across disciplines and apply ideas in real settings.</p><div class="study-points"><span>Multidisciplinary learning</span><span>Industry-integrated curriculum</span><span>Global exposure</span><span>Research opportunities</span></div><a class="outline-btn" href="#programs">Discover the MR advantage ↗</a></div></section>
+
+    <section class="section programs" id="programs">
+      <div class="section-heading"><div><div class="eyebrow"><span></span> Start with your ambition</div><h2>What do you want<br />to <em>become?</em></h2></div><p>Browse by field, then narrow by qualification, institution and mode. Your path should feel clear before your application begins.</p></div>
+      <div class="program-shell">
+        <div class="program-tabs" role="tablist" aria-label="Program level"><button class="active" data-level="undergraduate" role="tab">Undergraduate</button><button data-level="postgraduate" role="tab">Postgraduate</button><button data-level="doctoral" role="tab">Doctoral</button><button data-level="online" role="tab">Online</button></div>
+        <div class="program-grid" id="programGrid"></div>
+        <div class="program-footer"><span>Can’t decide yet? Explore all programs by eligibility, duration and career path.</span><a href="#programs">View all programs <b>↗</b></a></div>
+      </div>
+    </section>
+
+    <section class="institutions section" id="institutions">
+      <div class="institution-intro"><div class="eyebrow light"><span></span> One ecosystem, distinct pathways</div><h2>Choose the institution<br />that fits your future.</h2><p>From research-led higher education to dentistry, online learning and schools—Manav Rachna brings every stage of learning together.</p></div>
+      <div class="institution-cards">
+        <article class="institution-card featured"><span class="card-no">01</span><div><p>Deemed-to-be University</p><h3>MRIIRS</h3><span>Research-led, multidisciplinary learning</span></div><a href="#institutions" aria-label="Explore MRIIRS">↗</a></article>
+        <article class="institution-card"><span class="card-no">02</span><div><p>State Private University</p><h3>MRU</h3><span>Industry-aligned academic pathways</span></div><a href="#institutions" aria-label="Explore MRU">↗</a></article>
+        <article class="institution-card"><span class="card-no">03</span><div><p>Dental Sciences</p><h3>MRDC</h3><span>Clinical excellence with modern practice</span></div><a href="#institutions" aria-label="Explore MRDC">↗</a></article>
+        <article class="institution-card"><span class="card-no">04</span><div><p>Flexible Learning</p><h3>MR Online</h3><span>Degrees designed around working lives</span></div><a href="#institutions" aria-label="Explore MR Online">↗</a></article>
+      </div>
+    </section>
+
+    <section class="admission-detail section" id="admissions-overview"><div><div class="eyebrow"><span></span> Admissions</div><h2>A clear path from<br /><em>interest to enrolment.</em></h2><p>Explore eligibility, scholarships, fees and important dates for each institution in one guided admissions journey.</p><a class="primary-btn" href="#admissions">Start your application <span>↗</span></a></div><div class="admission-steps"><article><b>01</b><h3>Choose a program</h3><p>Compare fields, levels and institutions.</p></article><article><b>02</b><h3>Check eligibility</h3><p>Review requirements and key dates.</p></article><article><b>03</b><h3>Apply online</h3><p>Complete your application securely.</p></article><article><b>04</b><h3>Get guidance</h3><p>Speak with the admissions team.</p></article></div></section>
+
+    <section class="section proof" id="research">
+      <div class="proof-top"><div><div class="eyebrow"><span></span> Evidence of impact</div><h2>Ideas that move<br /><em>beyond the lab.</em></h2></div><a class="outline-btn" href="#research">Explore research <span>↗</span></a></div>
+      <div class="proof-layout">
+        <article class="story-card plum"><img src="assets/research-lab.png" alt="Students and a faculty mentor developing a robotics prototype in a university lab" /><div><span>Research & innovation</span><h3>Eight interdisciplinary clusters turn complex questions into measurable progress.</h3><p>Faculty, students and global partners work across health, sustainability, AI and advanced engineering.</p><a href="#research">Meet our research community →</a></div></article>
+        <div class="metric-grid"><div><strong>600+</strong><span>Corporate partners</span></div><div><strong>35</strong><span>Arjuna Awardees</span></div><div><strong>5,000+</strong><span>Placements in 5 years</span></div><div><strong>30+</strong><span>Years of legacy</span></div></div>
+      </div>
+    </section>
+
+    <section class="sports" id="sports"><img src="assets/sports-at-mr.png" alt="Student athletes training on the university athletics track" /><div class="sports-overlay"></div><div class="sports-copy"><div class="eyebrow light"><span></span> Sports @ Manav Rachna</div><h2>Train with purpose.<br />Compete with pride.</h2><p>World-class facilities, professional coaching and a sporting culture that has nurtured 35 Arjuna Awardees.</p><div class="sports-facts"><span><strong>35</strong> Arjuna Awardees</span><span><strong>15+</strong> sports disciplines</span><span><strong>1</strong> integrated sports ecosystem</span></div><a class="primary-btn pale" href="#sports">Explore sports facilities ↗</a></div></section>
+
+    <section class="achievers section"><div class="section-heading compact"><div><div class="eyebrow"><span></span> Student placement highlights</div><h2>Top achievers,<br /><em>remarkable starts.</em></h2></div><p>Recent outcomes across technology, consulting and global business.</p></div><div class="achiever-grid"><article><div class="avatar"><img src="assets/placement-students/ananya-placement.png" alt="Portrait of a Manav Rachna graduate" /></div><span>54 LPA · Palo Alto Networks</span><h3>Ananya Kamra</h3><p>Computer Science & Engineering</p></article><article><div class="avatar"><img src="assets/placement-students/karan-placement.png" alt="Portrait of a Manav Rachna graduate" /></div><span>60 LPA · KPMG Canada</span><h3>Karan Aditya Ghoshal</h3><p>Business & Analytics</p></article><article><div class="avatar"><img src="assets/placement-students/sarthak-placement.png" alt="Portrait of a Manav Rachna graduate" /></div><span>55 LPA · Spacetime</span><h3>Sarthak Rastogi</h3><p>Engineering & Technology</p></article><article><div class="avatar"><img src="assets/placement-students/deepanshu-placement.png" alt="Portrait of a Manav Rachna graduate" /></div><span>30 LPA · Niagara</span><h3>Deepanshu Sharma</h3><p>Computer Applications</p></article></div></section>
+
+    <section class="career" id="placements">
+      <div class="career-copy"><div class="eyebrow light"><span></span> Careers built with industry</div><h2>Where learning becomes<br /><em>forward motion.</em></h2><p>Career preparation starts early—with mentors, live projects, internships and a network of corporate partners.</p><div class="career-stat"><strong>60 LPA</strong><span>Highest package offered</span></div><a class="primary-btn pale" href="#placements">Explore placements <span>↗</span></a></div>
+      <div class="career-panel"><p>Student outcome</p><blockquote>“The strongest opportunities came from learning how to solve real problems with people from different disciplines.”</blockquote><div class="student"><span>AK</span><div><strong>Ananya Kamra</strong><small>Placed at Palo Alto Networks · 54 LPA</small></div></div></div>
+    </section>
+
+    <section class="numbers section" aria-label="University statistics"><div><div class="eyebrow light"><span></span> Manav Rachna in numbers</div><h2>A community built<br />for lasting impact.</h2></div><div class="number-grid"><article><strong>43,000+</strong><span>Alumni imprints globally</span></article><article><strong>600+</strong><span>Corporate network</span></article><article><strong>135+</strong><span>Global collaborations</span></article><article><strong>30+</strong><span>Years of educational legacy</span></article></div></section>
+
+    <section class="placement-network partner-section section" aria-label="Placement network">
+      <div class="partner-section-head"><div><div class="eyebrow"><span></span> Placement network</div><h2>Where ambition meets<br /><em>opportunity.</em></h2></div><div class="partner-head-copy"><span>Recruiters across technology, consulting and engineering</span><p>Our corporate relations team connects students with internships, live projects and career opportunities across a growing employer network.</p></div></div>
+      <div class="logo-marquee" aria-label="Selected placement partners"><div class="logo-track placement-track"><figure><img src="assets/partners/palo-alto.webp" alt="Palo Alto Networks" /></figure><figure><img src="assets/partners/kpmg-canada.webp" alt="KPMG Canada" /></figure><figure><img src="assets/partners/tekion.webp" alt="Tekion" /></figure><figure><img src="assets/partners/spacetime.webp" alt="Spacetime" /></figure><figure><img src="assets/partners/niagara.webp" alt="Niagara" /></figure><figure aria-hidden="true"><img src="assets/partners/palo-alto.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/kpmg-canada.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/tekion.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/spacetime.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/niagara.webp" alt="" /></figure></div></div>
+      <div class="placement-band"><div><strong>600+</strong><span>corporate partners</span></div><div><strong>5,000+</strong><span>placements in five years</span></div><div><strong>60 LPA</strong><span>highest package offered</span></div><a href="#placements">See placement outcomes ↗</a></div>
+    </section>
+
+    <section class="knowledge-partners partner-section section" aria-label="Knowledge partners">
+      <div class="partner-section-head"><div><div class="eyebrow light"><span></span> Knowledge partners</div><h2>Learning shaped by<br /><em>industry insight.</em></h2></div><div class="partner-head-copy"><span>Curriculum, certifications and future skills</span><p>Strategic knowledge collaborations bring current platforms, professional standards and industry perspectives directly into the learning experience.</p></div></div>
+      <div class="logo-marquee dark-marquee" aria-label="Selected knowledge partners"><div class="logo-track knowledge-track"><figure><img src="assets/partners/google-cloud.webp" alt="Google Cloud" /></figure><figure><img src="assets/partners/kpmg.webp" alt="KPMG" /></figure><figure><img src="assets/partners/institute-analytics.webp" alt="Institute of Analytics" /></figure><figure><img src="assets/partners/isdc.webp" alt="International Skill Development Corporation" /></figure><figure><img src="assets/partners/invest4edu.webp" alt="Invest4Edu" /></figure><figure aria-hidden="true"><img src="assets/partners/google-cloud.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/kpmg.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/institute-analytics.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/isdc.webp" alt="" /></figure><figure aria-hidden="true"><img src="assets/partners/invest4edu.webp" alt="" /></figure></div></div>
+      <div class="knowledge-note"><span>Built for what’s next</span><p>Industry-aligned learning · Professional certifications · Applied innovation · Faculty development</p></div>
+    </section>
+
+    <section class="walkthrough" aria-label="Campus walkthrough video">
+      <img src="assets/authentic/campus-green.webp" alt="Manav Rachna campus and landscaped grounds" />
+      <div class="walkthrough-shade"></div><div class="walkthrough-copy"><div class="eyebrow light"><span></span> Campus walkthrough</div><h2>See where your<br />next chapter unfolds.</h2><button class="play-button" type="button" aria-label="Play campus walkthrough video"><span>▶</span></button><p>Take a 3-minute tour of learning spaces, residences, sports facilities and student life.</p></div>
+    </section>
+
+    <section class="about-mr section"><div><div class="eyebrow"><span></span> About Manav Rachna</div><h2>Learning that creates<br /><em>a wider ripple.</em></h2><p>Manav Rachna Educational Institutions bring together universities, schools, research centres and community initiatives. The ecosystem helps learners grow with knowledge, character and a readiness to contribute.</p><a class="outline-btn" href="#top">Discover our legacy ↗</a></div><div class="about-image"><img src="assets/authentic/campus-fountain.webp" alt="Manav Rachna academic building and campus fountain" /><span>Since 1997</span></div></section>
+
+    <section class="section happenings" id="experience">
+      <div class="section-heading compact"><div><div class="eyebrow"><span></span> The campus, in motion</div><h2>What’s happening<br /><em>at Manav Rachna.</em></h2></div><a class="outline-btn" href="#experience">View all stories <span>↗</span></a></div>
+      <div class="news-grid"><article class="news-lead"><div class="news-art art-one"><span>MR</span></div><p>Research · 12 Sep 2026</p><h3>New interdisciplinary initiative advances sustainable technology research</h3><a href="#experience">Read the story →</a></article><article><div class="news-art art-two"><span>EVENT</span></div><p>Campus · 08 Sep 2026</p><h3>Students turn ideas into prototypes at the annual innovation showcase</h3><a href="#experience">Read the story →</a></article><article><div class="news-art art-three"><span>GLOBAL</span></div><p>International · 02 Sep 2026</p><h3>Global mobility programs open new pathways across partner universities</h3><a href="#experience">Read the story →</a></article></div>
+    </section>
+
+    <section class="admissions" id="admissions"><div><div class="eyebrow light"><span></span> Admissions 2027–28</div><h2>Your next chapter<br />starts here.</h2></div><div><p>Explore programs, understand eligibility and get guidance from the admissions team.</p><a class="primary-btn pale" href="#admissions">Begin your application <span>↗</span></a><a class="text-link light-link" href="#admissions">Download prospectus →</a></div></section>
+  </main>
+
+  <footer id="enquiry"><div class="footer-enquiry"><div><span class="footer-kicker">Start a conversation</span><h2>Have a question about your next step?</h2></div><div class="footer-enquiry-actions"><a href="tel:01294259000"><small>Call admissions</small><strong>0129 425 9000</strong></a><a href="mailto:admissions@manavrachna.edu.in"><small>Write to us</small><strong>admissions@manavrachna.edu.in</strong></a><a class="footer-cta" href="#admissions">Enquire now</a></div></div><div class="footer-top"><div class="footer-brand"><img src="assets/manav-rachna-logo.png" alt="Manav Rachna" /><p>Sector 43, Aravalli Hills, Delhi–Surajkund Road, Faridabad, Haryana 121004</p><div class="campus-tags"><span>Faridabad campus</span><span>Delhi NCR</span></div><div class="socials"><a href="#top" aria-label="Facebook">f</a><a href="#top" aria-label="LinkedIn">in</a><a href="#top" aria-label="YouTube">▶</a><a href="#top" aria-label="Instagram">◎</a></div></div><div><h3>Discover MR</h3><a href="#top">About Manav Rachna</a><a href="#top">Founder’s vision</a><a href="#top">Leadership team</a><a href="#top">Our legacy</a><a href="#top">Rankings & accreditations</a><a href="#top">Careers @ MR</a></div><div><h3>Learn with us</h3><a href="#programs">Undergraduate programs</a><a href="#programs">Postgraduate programs</a><a href="#programs">Doctoral programs</a><a href="#programs">Online learning</a><a href="#institutions">Schools & faculties</a><a href="#admissions">Scholarships & financial aid</a></div><div><h3>Research & global</h3><a href="#research">Research clusters</a><a href="#research">Innovation & incubation</a><a href="#research">Centres of excellence</a><a href="#research">Publications</a><a href="#experience">International collaborations</a><a href="#experience">Study abroad</a></div><div><h3>Student experience</h3><a href="#experience">Life @ Manav Rachna</a><a href="#sports">Sports @ MR</a><a href="#experience">Campus walkthrough</a><a href="#experience">Student support</a><a href="#placements">Placements</a><a href="#experience">Alumni network</a></div></div><div class="footer-utilities"><div><h3>Student resources</h3><a href="#top">Student ERP</a><a href="#top">Parent section</a><a href="#top">Library</a><a href="#top">Anti-ragging</a><a href="#top">Grievance redressal</a></div><div><h3>Our institutions</h3><a href="#institutions">MRIIRS</a><a href="#institutions">MRU</a><a href="#institutions">MRDC</a><a href="#institutions">MR Online</a><a href="#institutions">MRIS</a></div><div><h3>Popular actions</h3><a href="#admissions">Apply now</a><a href="#admissions">Download prospectus</a><a href="#experience">Plan a visit</a><a href="#enquiry">Contact us</a><a href="#top">Sitemap</a></div></div><div class="footer-bottom"><span>© 2026 Manav Rachna Educational Institutions</span><div><a href="#top">Privacy policy</a><a href="#top">Terms & conditions</a><a href="#top">Accessibility</a><a href="#top">Disclaimer</a></div></div></footer>
+
+<nav class="sticky-actions" aria-label="Quick actions"><a href="#programs"><span>⌕</span>Programs</a><a href="#admissions"><span>◎</span>Admission</a><a href="#enquiry"><span>✆</span>Contact</a><button type="button" id="stickyMenu"><span>☰</span>Menu</button><a class="sticky-apply" href="#admissions"><span>↗</span>Apply / Enquire</a></nav>
+  <div class="search-overlay" id="searchOverlay" aria-hidden="true"><button id="closeSearch" aria-label="Close search">×</button><div><span>Search Manav Rachna</span><label><input type="search" placeholder="Programs, schools, research…" autofocus /><b>↗</b></label><p>Popular: Engineering · Management · Design · Admissions</p></div></div>
+  <script src="script.js"></script>
+</body>
+</html>
+
