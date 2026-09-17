@@ -35,13 +35,17 @@ function wireScroller(trackSelector,previousSelector,nextSelector,cardSelector){
   const track=document.querySelector(trackSelector);
   if(!track)return;
   const move=direction=>{
-    const card=track.querySelector(cardSelector);
-    const amount=(card?.getBoundingClientRect().width||320)+18;
-    const atStart=track.scrollLeft<=4;
-    const atEnd=track.scrollLeft+track.clientWidth>=track.scrollWidth-4;
-    if(direction<0&&atStart)track.scrollTo({left:track.scrollWidth-track.clientWidth,behavior:'smooth'});
-    else if(direction>0&&atEnd)track.scrollTo({left:0,behavior:'smooth'});
-    else track.scrollBy({left:direction*amount,behavior:'smooth'});
+    const cards=[...track.querySelectorAll(cardSelector)];
+    if(cards.length<2)return;
+    const gap=parseFloat(getComputedStyle(track).columnGap)||0;
+    const cardWidth=cards[0].getBoundingClientRect().width;
+    const step=cardWidth+gap;
+    const visible=Math.max(1,Math.floor((track.clientWidth+gap)/step));
+    const lastIndex=Math.max(0,cards.length-visible);
+    const current=Math.min(lastIndex,Math.max(0,Math.round(track.scrollLeft/step)));
+    const target=current+direction<0?lastIndex:current+direction>lastIndex?0:current+direction;
+    const origin=cards[0].offsetLeft;
+    track.scrollTo({left:cards[target].offsetLeft-origin,behavior:'smooth'});
   };
   document.querySelector(previousSelector)?.addEventListener('click',()=>move(-1));
   document.querySelector(nextSelector)?.addEventListener('click',()=>move(1));
