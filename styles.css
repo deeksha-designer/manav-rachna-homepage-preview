@@ -121,3 +121,28 @@ body{font-size:16px}p{font-size:1rem;line-height:1.65}h2{font-size:clamp(2.25rem
 .about .knowledge{margin-top:60px}
 @media(max-width:1000px){.academic-card{min-height:440px}.admissions-stage{grid-template-columns:1fr}.admissions-visual{min-height:0}.about-transform{grid-template-columns:1fr}.about-story,.about-image,.about-stats{grid-column:1;grid-row:auto}.about-image img{width:100%;max-height:420px}.about-story{padding-right:0}}
 @media(max-width:760px){.section{padding:64px 0}.notice-scroller article img{height:auto!important}.academic-card,.academic-card:nth-child(2){min-height:430px}.academic-card>div{padding:26px 74px 26px 24px}.admissions-journey{padding:26px 22px}.journey-grid{grid-template-columns:1fr}.admission-routes{grid-template-columns:1fr 1fr}.about{padding-top:64px}.about-stats{grid-template-columns:1fr}.about-stat{min-height:120px}.about-image img{max-height:320px}.about .knowledge{margin-top:48px}}
+
+/* Fresh editorial imagery and progressive disclosure */
+.academic-card small,.academic-card p{opacity:0;transform:translateY(14px);max-height:0;overflow:hidden;margin:0;transition:opacity .28s,transform .38s,max-height .38s,margin .38s}
+.academic-card h3{margin:0;font-size:clamp(1.35rem,1.8vw,1.7rem);line-height:1.16;max-width:14ch}
+.academic-card:hover small,.academic-card:hover p,.academic-card.is-open small,.academic-card.is-open p{opacity:1;transform:none;max-height:100px}
+.academic-card:hover small,.academic-card.is-open small{display:block;margin-bottom:8px}
+.academic-card:hover h3,.academic-card.is-open h3{margin-bottom:12px}
+.academic-card:hover p,.academic-card.is-open p{margin-bottom:0}
+.academic-card.is-open:after{background:linear-gradient(0deg,rgba(181,31,54,1) 0%,rgba(181,31,54,.9) 32%,rgba(181,31,54,.3) 70%,rgba(181,31,54,.02) 100%)}
+.academic-card.is-open span{transform:rotate(45deg);background:#fff;color:var(--red)}
+.admissions-stage{gap:18px;padding:18px;border:0;background:#f2f4f8;overflow:visible}
+.admissions-visual,.admissions-journey{border-radius:20px;overflow:hidden}
+.admissions-visual{padding:0;background:#fff}.admissions-visual img{height:100%;max-height:none;object-fit:cover;border-radius:0}
+.admissions-journey{background:var(--navy);color:#fff}.admissions-journey .flow-label{color:#f3a6b2}.admissions-journey>h3{color:#fff}
+.journey-grid article{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.16)!important}.journey-grid article:hover{background:var(--red)}
+.journey-grid p{color:#dce2ee}.journey-grid b{color:#ff97a7}.admission-routes>span{color:#aeb8cc}
+.admission-routes a{background:#fff;color:var(--navy);border:0}.admission-routes a:hover{background:var(--red);color:#fff}
+.sports-mosaic figure:nth-of-type(1){grid-column:1;grid-row:1}.sports-mosaic .sports-fresh{grid-column:2;grid-row:1}.sports-mosaic figure.tall{grid-column:3;grid-row:1/3}.sports-mosaic figure:nth-of-type(4){grid-column:1;grid-row:2}.sports-mosaic figure:nth-of-type(5){grid-column:2;grid-row:2}.sports-extra{grid-column:4!important;grid-row:2!important}
+.achievers{display:flex!important;grid-template-columns:none!important;overflow-x:auto!important;scroll-snap-type:x mandatory;gap:16px;padding-bottom:10px}
+.achievers article{flex:0 0 calc((100% - 64px)/5)!important;scroll-snap-align:start;min-width:190px}
+.achievers article>img{width:100%;height:auto;aspect-ratio:4/5!important;object-fit:cover;object-position:50% 20%;background:#e9ebf0}
+.achievers article h3{font-size:1rem;line-height:1.3;min-height:2.6em}.achievers article p{font-size:.82rem}
+.research-track img,.happening img,.about-image img,.admissions-visual img,.academic-card img,.sports-mosaic img{image-rendering:auto}
+@media(max-width:1200px){.sports-mosaic .sports-fresh{grid-column:2;grid-row:2}.sports-extra{grid-column:2!important;grid-row:1!important}.achievers article{flex-basis:calc((100% - 48px)/4)!important}}
+@media(max-width:760px){.academic-card small,.academic-card p{opacity:0;max-height:0;transform:translateY(12px)}.academic-card.is-open small,.academic-card.is-open p{opacity:1;max-height:110px;transform:none}.admissions-stage{padding:10px}.admissions-visual img{min-height:230px}.sports-mosaic .sports-fresh{grid-column:2;grid-row:2}.sports-mosaic figure.tall{display:block;grid-column:1/3;grid-row:3}.sports-extra{grid-column:2!important;grid-row:1!important}.achievers article{flex-basis:72vw!important}}

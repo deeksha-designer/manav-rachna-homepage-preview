@@ -59,6 +59,16 @@ document.querySelectorAll('.path-chips button').forEach(button=>button.addEventL
   document.querySelector('.finder input').focus();
 }));
 
+document.querySelectorAll('.academic-card').forEach(card=>card.addEventListener('click',event=>{
+  const isTouchLike=window.matchMedia('(hover: none)').matches;
+  if(isTouchLike||event.target.closest('span')){
+    event.preventDefault();
+    const willOpen=!card.classList.contains('is-open');
+    document.querySelectorAll('.academic-card.is-open').forEach(item=>item.classList.remove('is-open'));
+    card.classList.toggle('is-open',willOpen);
+  }
+}));
+
 const knowledgeFiles=['65fd618ad9e081711104394.webp','65fd63af53cba1711104943.webp','692837ec450cf1764243436.webp','6928381fce9241764243487.webp','69283834b37c81764243508.webp','692838481bf1c1764243528.webp','69283864ef93b1764243556.webp','6928387c0a1051764243580.webp','6928388e7cf501764243598.webp','692838a21d3131764243618.webp','692838d1a71741764243665.webp','692838e8dd0451764243688.webp','692838fd2e3871764243709.webp','692839101404b1764243728.webp','6928392596c491764243749.webp','6928393c541fa1764243772.webp','692839537db481764243795.webp','692839669780f1764243814.webp','69283978bc8c71764243832.webp','6928399020ed91764243856.webp','692839b255eee1764243890.webp','692839c97fdae1764243913.webp','692839e0d422c1764243936.webp','692839f23b7e61764243954.webp','69283a09909b41764243977.webp','69283a2129b411764244001.webp','69283a353b77a1764244021.webp','69283a4bd44971764244043.webp','69283a61570841764244065.webp','69283a75136531764244085.webp','69283a87d5fde1764244103.webp','69283a9cbff431764244124.webp','69283ab2460d31764244146.webp','69283accf029f1764244172.webp','69283ae38e30e1764244195.webp','69283af672d571764244214.webp','69283b08c472a1764244232.webp','69283b1e2911b1764244254.webp','69283b31b3e221764244273.webp','69283b4b44d3a1764244299.webp','69283b5f9567a1764244319.webp','69283b70c75c71764244336.webp','69283b81242021764244353.webp','69283b91165341764244369.webp','69283b91b67731764244369.webp','69283ba5743981764244389.webp','69283bbecf0821764244414.webp'];
 const knowledgeTrack=document.querySelector('[data-logo-library="all"]');
 if(knowledgeTrack){
