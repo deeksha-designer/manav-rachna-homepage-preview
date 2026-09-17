@@ -130,3 +130,20 @@ footer{background:#290811}.button.dark,.menu-toggle{background:var(--red-dark)}
 footer>.footer-connect,footer>.footer-lead,footer>.footer-links,footer>.footer-services,footer>.footer-bottom{grid-column:1/-1}
 footer>.footer-lead{display:grid}
 footer>.footer-services{margin-left:0;margin-right:0}
+
+/* Unified CTA system */
+.button,.apply-link,.footer-connect a{min-height:48px;padding:13px 20px;border-radius:2px;display:inline-flex;align-items:center;justify-content:center;gap:14px;font-size:.875rem;font-weight:800;line-height:1.15;letter-spacing:0;transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s}
+.button:hover,.apply-link:hover,.footer-connect a:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(55,8,20,.16)}
+.button span,.apply-link span,.footer-connect a b{display:grid;place-items:center;width:18px;height:18px;margin-left:4px;line-height:1;font-size:.9em}
+.level-cards a,.impact-image a,.impact-note a,.student-story>a,.institution-feature-content>a,.sports-number a,.update-grid a,.updates-all{display:inline-flex;align-items:center;gap:10px;width:max-content;max-width:100%;min-height:38px;font-size:.8125rem;font-weight:800;line-height:1.2;text-decoration:none;border:0!important}
+.level-cards a:hover,.impact-image a:hover,.impact-note a:hover,.student-story>a:hover,.institution-feature-content>a:hover,.sports-number a:hover,.update-grid a:hover,.updates-all:hover{gap:14px}
+.updates-head,.updates-head:before,.updates-head:after,.updates-head>div,.updates-head p{border:0!important;box-shadow:none!important}
+
+/* Sports award panel */
+.sports-number{position:relative;overflow:hidden;background:linear-gradient(145deg,#d92d4c 0%,#94142d 100%);padding:30px;justify-content:space-between;isolation:isolate}
+.sports-number:before{content:"";position:absolute;z-index:-1;width:210px;height:210px;border:42px solid rgba(255,255,255,.09);border-radius:50%;right:-72px;top:-82px}
+.sports-number:after{content:"";position:absolute;z-index:-1;inset:auto 0 0;height:5px;background:rgba(255,255,255,.92)}
+.sports-number small{text-transform:uppercase;letter-spacing:.13em;font-size:.66rem;font-weight:800;color:#ffd5dd}
+.sports-number>div{display:flex;align-items:flex-end;gap:14px;margin-top:auto}.sports-number b{font:800 clamp(4.4rem,6vw,6.4rem)/.8 Manrope,sans-serif;letter-spacing:-.08em}.sports-number span{font:700 1rem/1.15 Manrope,sans-serif;padding-bottom:3px}
+.sports-number p{font-size:.82rem;line-height:1.5;color:#f8d9df;margin:18px 0 12px;max-width:260px}.sports-number a{min-height:42px;margin-top:0;padding:10px 14px;background:#fff;color:var(--red-dark)!important}.sports-number a i{display:grid;place-items:center;width:16px;height:16px;line-height:1;font-style:normal}
+@media(max-width:720px){.button,.apply-link{min-height:48px}.sports-number{height:auto!important;min-height:320px!important}.sports-number>div{margin-top:46px}.sports-number p{max-width:100%}}
