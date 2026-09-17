@@ -37,7 +37,11 @@ function wireScroller(trackSelector,previousSelector,nextSelector,cardSelector){
   const move=direction=>{
     const card=track.querySelector(cardSelector);
     const amount=(card?.getBoundingClientRect().width||320)+18;
-    track.scrollBy({left:direction*amount,behavior:'smooth'});
+    const atStart=track.scrollLeft<=4;
+    const atEnd=track.scrollLeft+track.clientWidth>=track.scrollWidth-4;
+    if(direction<0&&atStart)track.scrollTo({left:track.scrollWidth-track.clientWidth,behavior:'smooth'});
+    else if(direction>0&&atEnd)track.scrollTo({left:0,behavior:'smooth'});
+    else track.scrollBy({left:direction*amount,behavior:'smooth'});
   };
   document.querySelector(previousSelector)?.addEventListener('click',()=>move(-1));
   document.querySelector(nextSelector)?.addEventListener('click',()=>move(1));
@@ -45,6 +49,8 @@ function wireScroller(trackSelector,previousSelector,nextSelector,cardSelector){
 wireScroller('.notice-scroller','.notice-prev','.notice-next','article');
 wireScroller('.institution-track','.institution-prev','.institution-next','.institution-card');
 wireScroller('.research-track','.research-prev','.research-next','a');
+const achievers=document.querySelector('.achievers');
+if(achievers){[...achievers.children].forEach(card=>achievers.append(card.cloneNode(true)))}
 wireScroller('.achievers','.placement-prev','.placement-next','article');
 
 document.querySelector('.finder')?.addEventListener('submit',event=>event.preventDefault());
