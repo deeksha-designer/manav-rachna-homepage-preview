@@ -69,3 +69,12 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 @media(max-width:1050px){.story-card{grid-template-columns:42% 58%}}
 @media(max-width:700px){.story-card{height:500px;min-height:500px;display:block}.story-card>img{height:205px}.story-card>div{min-height:295px;padding:26px}.story-card>div h3{font-size:24px}.avatar img{object-position:center 20%}}
 @media(prefers-reduced-motion:reduce){.program-card,.institution-card,.admission-steps article,.metric-grid>div,.achiever-grid article,.number-grid article,.quick-paths a,.story-card>img,.walkthrough>img,.news-grid article{transition:none}}
+
+/* September image and CTA refresh */
+.art-one{background:linear-gradient(135deg,rgba(20,20,20,.08),rgba(20,20,20,.12)),url('assets/campus-hero.png') center/cover}
+.news-grid article:after{background:linear-gradient(0deg,rgba(9,11,15,.94) 0%,rgba(9,11,15,.62) 52%,rgba(9,11,15,.22) 100%)}
+.outline-btn,.primary-btn,.apply-btn{background:#b22b2e;color:#fff;border:1px solid #b22b2e}
+.outline-btn:hover,.primary-btn:hover,.apply-btn:hover{background:#922225;color:#fff;border-color:#922225}
+.sports .primary-btn.pale,.career .primary-btn.pale,.admissions .primary-btn.pale{background:#b22b2e;color:#fff;border-color:#b22b2e}
+.sports .primary-btn.pale span,.career .primary-btn.pale span,.admissions .primary-btn.pale span{color:#fff;border-color:rgba(255,255,255,.35)}
+.story-card h3{max-width:560px}
