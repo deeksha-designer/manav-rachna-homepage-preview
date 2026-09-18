@@ -21,6 +21,15 @@ triggers.forEach(button=>button.addEventListener('click',event=>{
   event.stopPropagation();
   button.classList.contains('active')?closeMega():openMega(button.dataset.menu);
 }));
+let megaCloseTimer;
+triggers.forEach(button=>button.addEventListener('mouseenter',()=>{
+  clearTimeout(megaCloseTimer);
+  openMega(button.dataset.menu);
+}));
+megaWrap?.addEventListener('mouseenter',()=>clearTimeout(megaCloseTimer));
+megaWrap?.addEventListener('mouseleave',()=>{
+  megaCloseTimer=setTimeout(closeMega,180);
+});
 document.addEventListener('click',event=>{if(!event.target.closest('.mega-wrap')&&!event.target.closest('.desktop-nav'))closeMega()});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMega();closeDrawer()}});
 
@@ -57,7 +66,21 @@ const achievers=document.querySelector('.achievers');
 if(achievers){[...achievers.children].forEach(card=>achievers.append(card.cloneNode(true)))}
 wireScroller('.achievers','.placement-prev','.placement-next','article');
 
-document.querySelector('.finder')?.addEventListener('submit',event=>event.preventDefault());
+const headerSearch=document.querySelector('.search');
+const finderInput=document.querySelector('.finder input[type="search"]');
+headerSearch?.addEventListener('click',()=>{
+  document.querySelector('#program-search')?.scrollIntoView({behavior:'smooth',block:'center'});
+  window.setTimeout(()=>finderInput?.focus(),450);
+});
+document.querySelector('.finder')?.addEventListener('submit',event=>{
+  event.preventDefault();
+  const query=finderInput?.value.trim();
+  if(!query){finderInput?.focus();return}
+  const resultLabel=document.querySelector('.finder-result')||document.createElement('p');
+  resultLabel.className='finder-result';
+  resultLabel.textContent=`Showing programme pathways related to “${query}”.`;
+  if(!resultLabel.parentElement)event.currentTarget.append(resultLabel);
+});
 document.querySelectorAll('.path-chips button').forEach(button=>button.addEventListener('click',()=>{
   document.querySelector('.finder input').value=button.textContent;
   document.querySelector('.finder input').focus();

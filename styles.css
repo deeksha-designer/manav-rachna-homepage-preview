@@ -244,6 +244,12 @@ h2,.section-head h2,.split-head h2,.placement-top h2{font-size:var(--type-sectio
 .notice-scroller article a:hover{transform:translateX(5px);color:var(--red2)}
 @media(prefers-reduced-motion:reduce){.notice-scroller article,.notice-scroller article:after,.notice-scroller article img,.notice-scroller article a{transition:none!important}}
 
+/* Hover navigation, functional search cue and outlined sports CTA */
+@media(min-width:1101px){.desktop-nav button{position:relative}.desktop-nav button:after{content:"";position:absolute;left:14px;right:14px;bottom:14px;height:2px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease)}.desktop-nav button:hover:after,.desktop-nav button.active:after{transform:scaleX(1)}}
+.finder-result{margin:12px 0 0;color:var(--red);font-size:.85rem;font-weight:700}
+.sports-cta{display:inline-flex!important;align-items:center;justify-content:center;margin-top:18px;padding:11px 18px;border:1px solid rgba(255,255,255,.72);border-radius:999px;color:#fff;font-size:.85rem;font-weight:700;transition:background .25s var(--ease),color .25s var(--ease),transform .25s var(--ease)}
+.sports-cta:hover{background:#fff;color:var(--navy);transform:translateY(-2px)}
+
 /* Viewport-triggered section transitions */
 .reveal-ready .scroll-reveal{opacity:0;transform:translate3d(0,34px,0);transition:opacity .75s var(--ease) var(--reveal-delay,0ms),transform .85s var(--ease) var(--reveal-delay,0ms);will-change:opacity,transform}
 .reveal-ready .scroll-reveal.is-revealed{opacity:1;transform:translate3d(0,0,0);will-change:auto}
