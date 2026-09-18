@@ -21,6 +21,26 @@ if(campusVideo&&campusPlay){
   campusVideo.addEventListener('ended',()=>walkthrough.classList.remove('is-playing'));
 }
 
+/* Fast, viewport-triggered statistic counters */
+(()=>{
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+  const counters=[...document.querySelectorAll('[data-count]')];
+  const format=value=>value.toLocaleString('en-IN');
+  const animate=el=>{
+    if(el.dataset.counted)return;
+    el.dataset.counted='true';
+    const target=Number(el.dataset.count),suffix=el.dataset.suffix||'',duration=720,start=performance.now();
+    const tick=now=>{
+      const progress=Math.min((now-start)/duration,1),ease=1-Math.pow(1-progress,3);
+      el.textContent=`${format(Math.round(target*ease))}${suffix}`;
+      if(progress<1)requestAnimationFrame(tick);else el.textContent=`${format(target)}${suffix}`;
+    };
+    requestAnimationFrame(tick);
+  };
+  const counterObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){animate(entry.target);counterObserver.unobserve(entry.target)}}),{threshold:.35,rootMargin:'0px 0px -8% 0px'});
+  counters.forEach(counter=>counterObserver.observe(counter));
+})();
+
 /* Progressive scroll-reveal motion */
 (()=>{
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
