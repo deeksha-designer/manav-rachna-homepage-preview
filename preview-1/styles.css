@@ -87,7 +87,7 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 .walkthrough.is-playing .video-close{opacity:1;visibility:visible;transform:scale(1.02)}
 .video-close:hover{background:#922225;transform:scale(1.08)}
 .video-modal-open{overflow:hidden}
-.walkthrough .play-button{font-size:38px;font-weight:300;line-height:1}.walkthrough .play-button span{display:block;margin:0;transform:translateY(-2px)}.walkthrough .play-button:hover{background:#922225;box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.walkthrough .play-button{font-size:24px;font-weight:400;line-height:1}.walkthrough .play-button span{display:block;margin-left:5px;transform:none}.walkthrough .play-button:hover{background:#922225;box-shadow:0 12px 32px rgba(0,0,0,.3)}
 .walkthrough-shade,.walkthrough-copy,.walkthrough>img{transition:opacity .35s ease}
 
 /* Scroll-triggered section transitions */
