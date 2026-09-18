@@ -10,6 +10,17 @@ const mega=document.getElementById('megaMenu');function openMenu(key){const m=me
 document.getElementById('menuBtn').addEventListener('click',()=>{const b=document.getElementById('menuBtn');const opened=!mega.classList.contains('open');b.setAttribute('aria-expanded',opened);if(opened)openMenu('academics');else mega.classList.remove('open')});const search=document.getElementById('searchOverlay');document.getElementById('searchBtn').addEventListener('click',()=>{search.classList.add('open');search.setAttribute('aria-hidden','false');setTimeout(()=>search.querySelector('input').focus(),50)});document.getElementById('closeSearch').addEventListener('click',()=>{search.classList.remove('open');search.setAttribute('aria-hidden','true')});document.addEventListener('keydown',e=>{if(e.key==='Escape'){search.classList.remove('open');mega.classList.remove('open')}});
 document.getElementById('stickyMenu').addEventListener('click',()=>{openMenu('academics');window.scrollTo({top:0,behavior:'smooth'})});
 
+const walkthrough=document.querySelector('.walkthrough');
+const campusVideo=walkthrough?.querySelector('.campus-video');
+const campusPlay=walkthrough?.querySelector('.play-button');
+if(campusVideo&&campusPlay){
+  campusPlay.addEventListener('click',async()=>{
+    walkthrough.classList.add('is-playing');
+    try{await campusVideo.play()}catch(error){walkthrough.classList.remove('is-playing')}
+  });
+  campusVideo.addEventListener('ended',()=>walkthrough.classList.remove('is-playing'));
+}
+
 /* Progressive scroll-reveal motion */
 (()=>{
   if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;
