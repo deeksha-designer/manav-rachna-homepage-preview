@@ -90,3 +90,14 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 .reveal-ready .scroll-reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
 @media(max-width:700px){.reveal-ready .scroll-reveal{transform:translate3d(0,24px,0);transition-duration:.58s}.reveal-ready .scroll-reveal.is-visible{transform:translate3d(0,0,0)}}
 @media(prefers-reduced-motion:reduce){.reveal-ready .scroll-reveal{opacity:1;transform:none;transition:none;will-change:auto}}
+
+/* Institution image-reveal interaction and placement section surface */
+.placement-network.partner-section{background:#fff}
+.institution-card{grid-template-columns:44px minmax(0,1fr) 0 45px;column-gap:0;overflow:hidden;transition:grid-template-columns .48s cubic-bezier(.2,.65,.25,1),padding .3s ease,background-color .3s ease}
+.institution-hover-image{width:100%;height:116px;margin:0;overflow:hidden;border-radius:10px;opacity:0;transform:translateX(28px) scale(.96);transition:opacity .32s ease,transform .48s cubic-bezier(.2,.65,.25,1)}
+.institution-hover-image img{width:100%;height:100%;display:block;object-fit:cover;filter:saturate(.85) contrast(1.04);transition:transform .55s ease}
+.institution-card:hover,.institution-card:focus-within{grid-template-columns:44px minmax(0,1fr) 190px 45px;column-gap:18px;background:rgba(255,255,255,.06)}
+.institution-card:hover .institution-hover-image,.institution-card:focus-within .institution-hover-image{opacity:1;transform:translateX(0) scale(1)}
+.institution-card:hover .institution-hover-image img,.institution-card:focus-within .institution-hover-image img{transform:scale(1.06)}
+@media(max-width:700px){.institution-card,.institution-card:hover,.institution-card:focus-within{grid-template-columns:38px minmax(0,1fr) 42px;column-gap:8px}.institution-hover-image{display:none}}
+@media(prefers-reduced-motion:reduce){.institution-card,.institution-hover-image,.institution-hover-image img{transition:none}}
