@@ -93,3 +93,38 @@ const counterObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
   requestAnimationFrame(draw);
 }),{threshold:.45});
 counters.forEach(counter=>counterObserver.observe(counter));
+
+// Progressive section reveals: enabled only when motion is welcome and JS is active.
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('reveal-ready');
+  const revealGroups=[
+    '.notice-scroller article',
+    '.academic-showcase .academic-card',
+    '.institution-track .institution-card',
+    '.admissions-cards a',
+    '.research-track>a',
+    '.sports-mosaic>*',
+    '.placement-stats>div',
+    '.achievers>article',
+    '.about-impact-stats>div',
+    '.happening-layout article',
+    '.footer-grid>div'
+  ];
+  const revealElements=new Set([
+    ...document.querySelectorAll('main .section>.shell, main .section>.about-impact, main .section>.knowledge'),
+    ...revealGroups.flatMap(selector=>[...document.querySelectorAll(selector)])
+  ]);
+  revealGroups.forEach(selector=>{
+    document.querySelectorAll(selector).forEach((element,index)=>{
+      element.style.setProperty('--reveal-delay',`${Math.min(index%6,5)*70}ms`);
+    });
+  });
+  revealElements.forEach(element=>element.classList.add('scroll-reveal'));
+  const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+    if(!entry.isIntersecting)return;
+    entry.target.classList.add('is-revealed');
+    revealObserver.unobserve(entry.target);
+  }),{rootMargin:'0px 0px -9% 0px',threshold:.08});
+  revealElements.forEach(element=>revealObserver.observe(element));
+}

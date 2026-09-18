@@ -232,3 +232,10 @@ h2,.section-head h2,.split-head h2,.placement-top h2{font-size:var(--type-sectio
 @media(max-width:1200px){.happening-lead{grid-template-columns:1.05fr .95fr}.happening-list article{grid-template-columns:150px 1fr}}
 @media(max-width:900px){.happening-layout{grid-template-columns:1fr}.happening-list{grid-template-columns:1fr 1fr}.happening-list article{grid-template-columns:1fr}.happening-list article>img{height:190px;min-height:0}}
 @media(max-width:760px){:root{--type-section:2.2rem}.happening .section-head{align-items:flex-start;padding-bottom:24px}.happening-lead{grid-template-columns:1fr;min-height:0}.happening-lead>img{height:240px;min-height:0}.happening-lead>div{padding:28px 24px}.happening-list{grid-template-columns:1fr}.happening-list article{grid-template-columns:120px 1fr;min-height:150px}.happening-list article>img{height:100%;min-height:150px}.happening-list article>div{padding:20px}.story-meta{align-items:flex-start;flex-direction:column;gap:4px}}
+
+/* Viewport-triggered section transitions */
+.reveal-ready .scroll-reveal{opacity:0;transform:translate3d(0,34px,0);transition:opacity .75s var(--ease) var(--reveal-delay,0ms),transform .85s var(--ease) var(--reveal-delay,0ms);will-change:opacity,transform}
+.reveal-ready .scroll-reveal.is-revealed{opacity:1;transform:translate3d(0,0,0);will-change:auto}
+.reveal-ready .institution-card.scroll-reveal,.reveal-ready .academic-card.scroll-reveal,.reveal-ready .sports-mosaic>*.scroll-reveal{transform:translate3d(0,24px,0) scale(.975)}
+.reveal-ready .institution-card.scroll-reveal.is-revealed,.reveal-ready .academic-card.scroll-reveal.is-revealed,.reveal-ready .sports-mosaic>*.scroll-reveal.is-revealed{transform:translate3d(0,0,0) scale(1)}
+@media(prefers-reduced-motion:reduce){.scroll-reveal{opacity:1!important;transform:none!important;transition:none!important}}
