@@ -233,6 +233,17 @@ h2,.section-head h2,.split-head h2,.placement-top h2{font-size:var(--type-sectio
 @media(max-width:900px){.happening-layout{grid-template-columns:1fr}.happening-list{grid-template-columns:1fr 1fr}.happening-list article{grid-template-columns:1fr}.happening-list article>img{height:190px;min-height:0}}
 @media(max-width:760px){:root{--type-section:2.2rem}.happening .section-head{align-items:flex-start;padding-bottom:24px}.happening-lead{grid-template-columns:1fr;min-height:0}.happening-lead>img{height:240px;min-height:0}.happening-lead>div{padding:28px 24px}.happening-list{grid-template-columns:1fr}.happening-list article{grid-template-columns:120px 1fr;min-height:150px}.happening-list article>img{height:100%;min-height:150px}.happening-list article>div{padding:20px}.story-meta{align-items:flex-start;flex-direction:column;gap:4px}}
 
+/* Notice Board card interaction */
+.notice-scroller article{position:relative;transition:transform .42s var(--ease),border-color .42s var(--ease),box-shadow .42s var(--ease)}
+.notice-scroller article:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;transition:transform .42s var(--ease)}
+.notice-scroller article img{transition:transform .6s var(--ease),filter .42s var(--ease)}
+.notice-scroller article:hover,.notice-scroller article:focus-within{transform:translateY(-8px);border-color:rgba(181,31,54,.42);box-shadow:0 18px 38px rgba(11,24,57,.14)!important}
+.notice-scroller article:hover:after,.notice-scroller article:focus-within:after{transform:scaleX(1)}
+.notice-scroller article:hover img,.notice-scroller article:focus-within img{transform:scale(1.045);filter:saturate(1.06)}
+.notice-scroller article a{display:inline-flex;transition:color .25s var(--ease),transform .25s var(--ease)}
+.notice-scroller article a:hover{transform:translateX(5px);color:var(--red2)}
+@media(prefers-reduced-motion:reduce){.notice-scroller article,.notice-scroller article:after,.notice-scroller article img,.notice-scroller article a{transition:none!important}}
+
 /* Viewport-triggered section transitions */
 .reveal-ready .scroll-reveal{opacity:0;transform:translate3d(0,34px,0);transition:opacity .75s var(--ease) var(--reveal-delay,0ms),transform .85s var(--ease) var(--reveal-delay,0ms);will-change:opacity,transform}
 .reveal-ready .scroll-reveal.is-revealed{opacity:1;transform:translate3d(0,0,0);will-change:auto}
