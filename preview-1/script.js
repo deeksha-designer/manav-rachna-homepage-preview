@@ -13,12 +13,17 @@ document.getElementById('stickyMenu').addEventListener('click',()=>{openMenu('ac
 const walkthrough=document.querySelector('.walkthrough');
 const campusVideo=walkthrough?.querySelector('.campus-video');
 const campusPlay=walkthrough?.querySelector('.play-button');
+const campusClose=walkthrough?.querySelector('.video-close');
+const closeCampusVideo=()=>{if(!walkthrough||!campusVideo)return;campusVideo.pause();campusVideo.currentTime=0;walkthrough.classList.remove('is-playing');document.body.classList.remove('video-modal-open')};
 if(campusVideo&&campusPlay){
   campusPlay.addEventListener('click',async()=>{
     walkthrough.classList.add('is-playing');
-    try{await campusVideo.play()}catch(error){walkthrough.classList.remove('is-playing')}
+    document.body.classList.add('video-modal-open');
+    try{await campusVideo.play()}catch(error){closeCampusVideo()}
   });
-  campusVideo.addEventListener('ended',()=>walkthrough.classList.remove('is-playing'));
+  campusClose?.addEventListener('click',closeCampusVideo);
+  campusVideo.addEventListener('ended',closeCampusVideo);
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&walkthrough.classList.contains('is-playing'))closeCampusVideo()});
 }
 
 /* Fast, viewport-triggered statistic counters */

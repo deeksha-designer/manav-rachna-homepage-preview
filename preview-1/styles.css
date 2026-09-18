@@ -79,9 +79,14 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 .sports .primary-btn.pale span,.career .primary-btn.pale span,.admissions .primary-btn.pale span{color:#fff;border-color:rgba(255,255,255,.35)}
 .story-card h3{max-width:560px}
 .news-art.art-one>span{width:auto;height:auto;border:0;display:block;place-items:initial}
-.campus-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:#000;opacity:0;visibility:hidden;z-index:4;transition:opacity .35s ease}
-.walkthrough.is-playing .campus-video{opacity:1;visibility:visible}
-.walkthrough.is-playing .walkthrough-shade,.walkthrough.is-playing .walkthrough-copy,.walkthrough.is-playing>img{opacity:0;pointer-events:none}
+.campus-video{position:fixed;left:50%;top:50%;width:min(920px,88vw);height:auto;max-height:80vh;object-fit:contain;background:#000;border-radius:16px;opacity:0;visibility:hidden;z-index:121;transform:translate(-50%,-46%) scale(.96);box-shadow:0 28px 90px rgba(0,0,0,.55);transition:opacity .3s ease,transform .3s ease}
+.walkthrough.is-playing:after{content:'';position:fixed;inset:0;background:rgba(7,10,16,.82);z-index:120;backdrop-filter:blur(8px)}
+.walkthrough.is-playing .campus-video{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1)}
+.walkthrough.is-playing .walkthrough-shade,.walkthrough.is-playing .walkthrough-copy,.walkthrough.is-playing>img{opacity:1;pointer-events:none}
+.video-close{position:fixed;right:calc(6vw - 12px);top:calc(10vh - 18px);width:44px;height:44px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:#b22b2e;color:#fff;font-size:28px;line-height:1;z-index:122;opacity:0;visibility:hidden;cursor:pointer;transition:opacity .3s ease,transform .3s ease}
+.walkthrough.is-playing .video-close{opacity:1;visibility:visible;transform:scale(1.02)}
+.video-close:hover{background:#922225;transform:scale(1.08)}
+.video-modal-open{overflow:hidden}
 .walkthrough-shade,.walkthrough-copy,.walkthrough>img{transition:opacity .35s ease}
 
 /* Scroll-triggered section transitions */
