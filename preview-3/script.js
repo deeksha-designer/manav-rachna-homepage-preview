@@ -10,13 +10,13 @@ const menuData={
 const mega=document.querySelector('.mega');
 const navButtons=document.querySelectorAll('.primary-nav [data-menu]');
 function closeMega(){mega.classList.remove('open');mega.setAttribute('aria-hidden','true');navButtons.forEach(button=>button.classList.remove('active'))}
-navButtons.forEach(button=>button.addEventListener('click',event=>{
-  event.stopPropagation();
+function openMega(button){
   const key=button.dataset.menu;
-  const wasOpen=button.classList.contains('active');
   closeMega();
-  if(!wasOpen){button.classList.add('active');mega.innerHTML=`<div class="mega-intro"><span class="section-label">Explore</span><h3>${button.textContent.replace('⌄','').trim()}</h3><p>Discover programmes, opportunities and essential information across the Manav Rachna ecosystem.</p><a href="#${key}">View ${key} overview <b>↗</b></a></div><div class="mega-links">${menuData[key].map(item=>`<a href="#${key}"><span>${item}</span><b>↗</b></a>`).join('')}</div>`;mega.classList.add('open');mega.setAttribute('aria-hidden','false')}
-}));
+  button.classList.add('active');mega.innerHTML=`<div class="mega-intro"><span class="section-label">Explore</span><h3>${button.textContent.trim()}</h3><p>Discover programmes, opportunities and essential information across the Manav Rachna ecosystem.</p><a href="#${key}">View ${key} overview <b>↗</b></a></div><div class="mega-links">${menuData[key].map(item=>`<a href="#${key}"><span>${item}</span><b>↗</b></a>`).join('')}</div>`;mega.classList.add('open');mega.setAttribute('aria-hidden','false');
+}
+navButtons.forEach(button=>{button.addEventListener('mouseenter',()=>openMega(button));button.addEventListener('focus',()=>openMega(button));});
+document.querySelector('.site-header').addEventListener('mouseleave',closeMega);
 document.addEventListener('click',event=>{if(!event.target.closest('.mega')&&!event.target.closest('.primary-nav'))closeMega()});
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){closeMega();document.querySelector('.search-panel').classList.remove('open')}});
 document.querySelector('.announcement button').addEventListener('click',event=>event.currentTarget.parentElement.remove());
@@ -58,7 +58,11 @@ document.querySelector('.achiever-next')?.addEventListener('click',()=>moveAchie
 document.querySelectorAll('.program-tabs button').forEach(button=>button.addEventListener('click',()=>{
   document.querySelectorAll('.program-tabs button').forEach(item=>item.classList.remove('active'));
   button.classList.add('active');
-  document.querySelector('.finder-form input')?.focus();
+  document.querySelectorAll('.program-tabs button').forEach(item=>item.setAttribute('aria-selected',String(item===button)));
+  const level=button.dataset.level;
+  document.querySelectorAll('.discipline-grid a').forEach(card=>card.hidden=level!=='all'&&!card.dataset.levels.split(' ').includes(level));
+  const select=document.querySelector('.finder-form select');
+  if(select){const labels={all:'All study levels',ug:'Undergraduate',pg:'Postgraduate',doctoral:'Doctoral',online:'Online'};select.value=labels[level];}
 }));
 
 const successStories=[
@@ -93,7 +97,8 @@ const statObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
   const suffix=entry.target.dataset.suffix||'';
   function tick(now){
     const progress=Math.min((now-start)/duration,1),value=Math.round(target*(1-Math.pow(1-progress,3)));
-    entry.target.textContent=target>=10000?`${Math.round(value/1000)}${suffix}`:`${value}${suffix}`;
+    const display=suffix==='k+'?Math.round(value/1000):entry.target.dataset.pad?String(value).padStart(Number(entry.target.dataset.pad),'0'):value.toLocaleString('en-IN');
+    entry.target.textContent=`${display}${suffix}`;
     if(progress<1)requestAnimationFrame(tick);
   }
   requestAnimationFrame(tick);statObserver.unobserve(entry.target);

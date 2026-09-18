@@ -17,13 +17,13 @@
   <header class="site-header" id="top">
     <a class="brand" href="#top" aria-label="Manav Rachna home"><img src="assets/manav-rachna-logo.png" alt="Manav Rachna" /></a>
     <nav class="primary-nav" aria-label="Primary navigation">
-      <button data-menu="about">About <span>⌄</span></button>
-      <button data-menu="academics">Academics <span>⌄</span></button>
-      <button data-menu="admissions">Admissions <span>⌄</span></button>
-      <button data-menu="research">Research <span>⌄</span></button>
-      <button data-menu="global">Global <span>⌄</span></button>
-      <button data-menu="campus">Campus life <span>⌄</span></button>
-      <button data-menu="placements">Placements <span>⌄</span></button>
+      <button data-menu="about">About</button>
+      <button data-menu="academics">Academics</button>
+      <button data-menu="admissions">Admissions</button>
+      <button data-menu="research">Research</button>
+      <button data-menu="global">Global</button>
+      <button data-menu="campus">Campus life</button>
+      <button data-menu="placements">Placements</button>
       <a href="#updates">News</a><a href="#top">Alumni</a>
     </nav>
     <div class="header-actions"><button class="search-open" aria-label="Open search">⌕</button><a class="apply-link" href="#apply">Apply now <span>↗</span></a><button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><i></i><i></i></button></div>
@@ -37,7 +37,7 @@
         <p class="kicker">Manav Rachna Vidyanatariksha</p>
         <h1>Choice<br />moves <em>you.</em></h1>
         <p class="lede">A multidisciplinary university ecosystem where ambitious learning meets research, industry and real-world momentum.</p>
-        <div class="hero-actions"><a class="button primary" href="#finder">Explore programs <span>↗</span></a><a class="button ghost" href="#visit">Take a campus tour <span>▶</span></a></div>
+        <div class="hero-actions"><a class="button hero-explore" href="#finder">Explore programs <span>↗</span></a><a class="button ghost" href="#visit">Take a campus tour <span>▶</span></a></div>
         <div class="hero-proof"><div><b data-count="43000" data-suffix="k+">0</b><span>alumni worldwide</span></div><div><b data-count="135" data-suffix="+">0</b><span>global collaborations</span></div><div><b data-count="600" data-suffix="+">0</b><span>corporate partners</span></div></div>
       </div>
     </section>
@@ -52,21 +52,21 @@
     <section class="finder section" id="finder">
       <div class="section-label">Find your program</div>
       <div class="finder-heading"><h2>Find the programme<br /><em>that moves you forward.</em></h2><p>Start with your study level, then search by subject, career direction or programme name.</p></div>
-      <div class="program-tabs" role="tablist" aria-label="Programme level"><button class="active">All programmes</button><button>Undergraduate</button><button>Postgraduate</button><button>Doctoral</button></div>
+      <div class="program-tabs" role="tablist" aria-label="Programme level"><button class="active" data-level="all" aria-selected="true">All programmes</button><button data-level="ug" aria-selected="false">Undergraduate</button><button data-level="pg" aria-selected="false">Postgraduate</button><button data-level="doctoral" aria-selected="false">Doctoral</button><button data-level="online" aria-selected="false">Online</button></div>
       <form class="finder-form" onsubmit="return false">
         <label><span>What do you want to study?</span><input type="search" placeholder="Try ‘AI’, ‘psychology’ or ‘MBA’" /></label>
         <label><span>Level</span><select><option>All study levels</option><option>Undergraduate</option><option>Postgraduate</option><option>Doctoral</option><option>Online</option></select></label>
         <button type="submit">Search <span>↗</span></button>
       </form>
       <div class="discipline-grid">
-        <a href="#finder" style="--card-image:url('assets/fresh-engineering-lab.png')"><h3>Engineering</h3><b>Explore programmes ↗</b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/notice-business.png')"><h3>Management</h3><b>View programmes <span>↗</span></b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/notice-law.png')"><h3>Law</h3><b>View programmes <span>↗</span></b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/notice-design.png')"><h3>Design</h3><b>View programmes <span>↗</span></b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/research-biotech.png')"><h3>Health Sciences</h3><b>View programmes <span>↗</span></b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/news-culture.png')"><h3>Media</h3><b>View programmes <span>↗</span></b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/research.png')"><h3>Sciences</h3><b>View programmes <span>↗</span></b></a>
-        <a href="#finder" style="--card-image:url('assets/indian/news-convocation.png')"><h3>Humanities</h3><b>View programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg doctoral" style="--card-image:url('assets/fresh-engineering-lab.png')"><h3>Engineering</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg online" style="--card-image:url('assets/indian/notice-business.png')"><h3>Management</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg doctoral" style="--card-image:url('assets/indian/notice-law.png')"><h3>Law</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg" style="--card-image:url('assets/indian/notice-design.png')"><h3>Design</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg doctoral" style="--card-image:url('assets/indian/research-biotech.png')"><h3>Health Sciences</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg online" style="--card-image:url('assets/indian/news-culture.png')"><h3>Media</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg doctoral" style="--card-image:url('assets/indian/research.png')"><h3>Sciences</h3><b>Explore programmes <span>↗</span></b></a>
+        <a href="#finder" data-levels="ug pg online" style="--card-image:url('assets/indian/news-convocation.png')"><h3>Humanities</h3><b>Explore programmes <span>↗</span></b></a>
       </div>
     </section>
 
@@ -81,7 +81,7 @@
     </section>
 
     <section class="study-story section" id="study">
-      <div class="study-story-copy"><div class="section-label">Discover Manav Rachna</div><h2>Study at<br /><em>Manav Rachna.</em></h2><p>Learning here moves between classrooms, laboratories, studios and industry—helping students turn curiosity into capability.</p><a class="button dark" href="#finder">Explore academics <span>↗</span></a><div class="floating-stat"><b>43,000+</b><span>Alumni imprints globally</span></div></div>
+      <div class="study-story-copy"><div class="section-label">Discover Manav Rachna</div><h2>Study at<br /><em>Manav Rachna.</em></h2><p>Learning here moves between classrooms, laboratories, studios and industry—helping students turn curiosity into capability.</p><a class="button dark" href="#finder">Explore academics <span>↗</span></a><div class="floating-stat"><b data-count="43000" data-suffix="+">0</b><span>Alumni imprints globally</span></div></div>
       <div class="study-collage"><img class="study-tall" src="assets/indian/news-innovation.png" alt="Indian students presenting an innovation prototype" /><img src="assets/indian/notice-design.png" alt="Indian student working in a creative studio" /><img src="assets/indian/research-incubator.png" alt="Indian founders collaborating in an innovation hub" /></div>
     </section>
 
@@ -115,15 +115,15 @@
       <div class="impact-head"><h2>Questions that<br /><em>change outcomes.</em></h2><p>Interdisciplinary teams connect ambitious research with urgent needs across technology, health, sustainability and society.</p></div>
       <div class="impact-grid">
         <article class="impact-image"><img src="assets/indian/research-technology-v2.png" alt="Indian researchers developing a technology project" /><div><small>Research spotlight</small><h3>From lab insight to real-world impact</h3><a href="#research">Explore our clusters ↗</a></div></article>
-        <article class="metric red"><b>08</b><span>Interdisciplinary research clusters</span></article>
-        <article class="metric navy"><b>135+</b><span>Global academic collaborations</span></article>
+        <article class="metric red"><b data-count="8" data-pad="2">0</b><span>Interdisciplinary research clusters</span></article>
+        <article class="metric navy"><b data-count="135" data-suffix="+">0</b><span>Global academic collaborations</span></article>
         <article class="impact-note"><span>Innovation & incubation</span><h3>Ideas get the room, mentorship and industry access to become ventures.</h3><a href="#research">Enter the innovation ecosystem →</a></article>
       </div>
     </section>
 
     <section class="outcomes section" id="outcomes">
       <div class="outcome-top"><div><div class="section-label light">Placements</div><h2>Careers begin<br /><em>right here.</em></h2></div><p>Career preparation is built into the journey through live projects, mentoring, internships and an extensive employer network.</p></div>
-      <div class="outcome-stats"><div><b>60 LPA</b><span>Highest package offered</span></div><div><b>5,000+</b><span>Placements in five years</span></div><div><b>600+</b><span>Corporate relationships</span></div></div>
+      <div class="outcome-stats"><div><b><span data-count="60">0</span> LPA</b><span>Highest package offered</span></div><div><b data-count="5000" data-suffix="+">0</b><span>Placements in five years</span></div><div><b data-count="600" data-suffix="+">0</b><span>Corporate relationships</span></div></div>
       <div class="student-story placement-visual"><img src="assets/indian/achiever-5.jpg" alt="Indian graduate beginning a professional career" /><blockquote>“The opportunity wasn’t just a placement. It was the confidence to solve real problems from day one.”</blockquote><div class="student-profile"><span>LS</span><div><b>Lokdeep Saluja</b><small>23 LPA · Tekion</small></div></div><a href="#outcomes">View placement outcomes ↗</a></div>
       <div class="corporate-network"><div class="network-heading"><p>Our corporate network</p><span>Trusted by leading employers in India and worldwide</span></div><div class="logo-marquee"><div class="logo-marquee-track"><span class="logo-tile"><img src="assets/mr/paloalto_logo.webp" alt="Palo Alto Networks" /></span><span class="logo-tile wordmark">Microsoft</span><span class="logo-tile"><img src="assets/mr/Niagra_logo.webp" alt="Niagara" /></span><span class="logo-tile wordmark">Google</span><span class="logo-tile"><img src="assets/mr/Tekion_logo.webp" alt="Tekion" /></span><span class="logo-tile wordmark">Amazon</span><span class="logo-tile"><img src="assets/mr/KPMGCanada_logo.webp" alt="KPMG Canada" /></span><span class="logo-tile wordmark">Deloitte.</span><span class="logo-tile"><img src="assets/mr/Spacetime_logo.webp" alt="Spacetime" /></span><span class="logo-tile wordmark">Accenture</span><span class="logo-tile"><img src="assets/mr/paloalto_logo.webp" alt="" /></span><span class="logo-tile wordmark">Microsoft</span><span class="logo-tile"><img src="assets/mr/Niagra_logo.webp" alt="" /></span><span class="logo-tile wordmark">Google</span><span class="logo-tile"><img src="assets/mr/Tekion_logo.webp" alt="" /></span><span class="logo-tile wordmark">Amazon</span><span class="logo-tile"><img src="assets/mr/KPMGCanada_logo.webp" alt="" /></span><span class="logo-tile wordmark">Deloitte.</span><span class="logo-tile"><img src="assets/mr/Spacetime_logo.webp" alt="" /></span><span class="logo-tile wordmark">Accenture</span></div></div></div>
     </section>
@@ -148,7 +148,7 @@
       </div>
     </section>
 
-    <section class="glance section" id="glance"><img src="assets/indian/news-convocation.png" alt="Indian graduates celebrating together" /><div class="glance-overlay"></div><div class="glance-content"><div class="section-label light">Manav Rachna at a glance</div><h2>An ecosystem<br /><em>built for impact.</em></h2><div><article><b>43,000+</b><span>Alumni globally</span></article><article><b>600+</b><span>MNCs & Indian corporates</span></article><article><b>135+</b><span>Global academic collaborations</span></article></div></div></section>
+    <section class="glance section" id="glance"><img src="assets/indian/news-convocation.png" alt="Indian graduates celebrating together" /><div class="glance-overlay"></div><div class="glance-content"><div class="section-label light">Manav Rachna at a glance</div><h2>An ecosystem<br /><em>built for impact.</em></h2><div><article><b data-count="43000" data-suffix="+">0</b><span>Alumni globally</span></article><article><b data-count="600" data-suffix="+">0</b><span>MNCs & Indian corporates</span></article><article><b data-count="135" data-suffix="+">0</b><span>Global academic collaborations</span></article></div></div></section>
 
     <section class="global-partners section" id="global"><div class="global-visual"><img src="assets/indian/research-global.png" alt="Indian students in a global collaborative learning session" /></div><div class="global-copy"><div class="section-label">Global & knowledge partners</div><h2>Learning<br /><em>without borders.</em></h2><p>International collaborations and knowledge partners create opportunities for exchange, mobility, joint research and globally relevant learning.</p><div class="global-logos"><img src="assets/knowledge/65fd618ad9e081711104394.webp" alt="Auckland Institute of Studies" /><img src="assets/knowledge/692837ec450cf1764243436.webp" alt="Asian Institute of Medical Sciences" /><img src="assets/knowledge/69283834b37c81764243508.webp" alt="Google Cloud" /><img src="assets/knowledge/69283864ef93b1764243556.webp" alt="Invest4Edu" /><img src="assets/knowledge/65fd63af53cba1711104943.webp" alt="Knowledge partner" /><img src="assets/knowledge/6928381fce9241764243487.webp" alt="Knowledge partner" /></div><a class="button dark" href="#global">Explore global partnerships <span>↗</span></a></div></section>
 
@@ -173,7 +173,7 @@
 
     <section class="about section" id="about">
       <div class="about-image"><img src="assets/indian/achiever-v3-2.png" alt="Indian academic community member" /><span>Since 1997</span></div>
-      <div class="about-copy"><div class="section-label">About Manav Rachna</div><h2>Built on a legacy<br /><em>of learning.</em></h2><p>Manav Rachna Educational Institutions bring together universities, schools, research centres and community initiatives—helping learners grow with knowledge, character and a readiness to contribute.</p><a class="button dark" href="#about">Discover our story <span>↗</span></a><div class="about-metrics"><div><b>43,000+</b><span>Alumni imprints globally</span></div><div><b>30+</b><span>Years of educational legacy</span></div></div></div>
+      <div class="about-copy"><div class="section-label">About Manav Rachna</div><h2>Built on a legacy<br /><em>of learning.</em></h2><p>Manav Rachna Educational Institutions bring together universities, schools, research centres and community initiatives—helping learners grow with knowledge, character and a readiness to contribute.</p><a class="button dark" href="#about">Discover our story <span>↗</span></a><div class="about-metrics"><div><b data-count="43000" data-suffix="+">0</b><span>Alumni imprints globally</span></div><div><b data-count="30" data-suffix="+">0</b><span>Years of educational legacy</span></div></div></div>
     </section>
 
     <section class="updates section">
@@ -185,7 +185,7 @@
       </div>
     </section>
 
-    <section class="virtual-tour" id="virtual-tour"><img src="assets/indian/research-incubator.png" alt="Indian students in an expansive university learning environment" /><div></div><article><span>Visit from anywhere</span><h2>Experience<br /><em>Manav Rachna.</em></h2><p>Walk through learning spaces, residences, sports facilities and the campus community.</p><div><a class="button pale" href="#virtual-tour">Take a virtual tour <span>▶</span></a><a class="button ghost" href="#visit">Plan your visit <span>↗</span></a></div></article></section>
+    <section class="virtual-tour" id="virtual-tour"><div class="virtual-photo"><img src="assets/indian/research-incubator.png" alt="Indian students in an expansive university learning environment" /></div><div class="virtual-pattern" aria-hidden="true"></div><article><span>Visit from anywhere</span><h2>Experience<br /><em>Manav Rachna.</em></h2><p>Walk through learning spaces, residences, sports facilities and the campus community before planning your day on campus.</p><div><a class="button dark" href="#virtual-tour">Take a virtual tour <span>▶</span></a><a class="button outline" href="#visit">Plan your visit <span>↗</span></a></div></article></section>
 
     <section class="apply-panel section" id="apply"><div><span>Admissions 2027–28</span><h2>Your future<br />starts here.</h2></div><div><p>Explore programmes, check eligibility and get guidance from the admissions team.</p><a class="button pale" href="#finder">Explore programmes <span>↗</span></a><a href="#apply">Apply now →</a></div></section>
   </main>
