@@ -79,3 +79,10 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 .sports .primary-btn.pale span,.career .primary-btn.pale span,.admissions .primary-btn.pale span{color:#fff;border-color:rgba(255,255,255,.35)}
 .story-card h3{max-width:560px}
 .news-art.art-one>span{width:auto;height:auto;border:0;display:block;place-items:initial}
+
+/* Scroll-triggered section transitions */
+.reveal-ready .scroll-reveal{opacity:0;transform:translate3d(0,38px,0);transition:opacity .72s cubic-bezier(.2,.65,.25,1),transform .72s cubic-bezier(.2,.65,.25,1);will-change:opacity,transform}
+.reveal-ready .scroll-reveal.scroll-reveal-item{transform:translate3d(0,24px,0);transition-delay:var(--reveal-delay,0ms)}
+.reveal-ready .scroll-reveal.is-visible{opacity:1;transform:translate3d(0,0,0)}
+@media(max-width:700px){.reveal-ready .scroll-reveal{transform:translate3d(0,24px,0);transition-duration:.58s}.reveal-ready .scroll-reveal.is-visible{transform:translate3d(0,0,0)}}
+@media(prefers-reduced-motion:reduce){.reveal-ready .scroll-reveal{opacity:1;transform:none;transition:none;will-change:auto}}
