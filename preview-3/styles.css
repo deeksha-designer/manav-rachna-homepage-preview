@@ -269,3 +269,17 @@ footer,.footer-lead p,.footer-lead a,.footer-links a,.footer-services,.footer-se
 footer .footer-links h3,.footer-services span{color:#fff!important}
 .footer-services{padding-top:16px!important;padding-bottom:16px!important}
 .footer-bottom{margin-top:8px!important;padding-top:16px!important}
+
+/* Restore spacious footer layout and reference alumni rail treatment */
+footer{padding-top:96px!important;padding-bottom:18px!important;row-gap:24px!important}
+.footer-lead{border-bottom:1px solid #ffffff30;padding:96px 0 40px;grid-template-columns:180px minmax(260px,1.5fr) 1fr auto;align-items:start;gap:40px}
+.footer-links{padding:50px 0;grid-template-columns:repeat(5,1fr);gap:24px}
+.footer-bottom{margin-top:8px!important;padding-top:16px!important}
+.footer-social a{display:grid;place-items:center}
+.footer-social svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.footer-social a[aria-label="Facebook"] svg path{fill:currentColor;stroke:none}
+.alumni-rail{background:#fff!important}
+.alumni-rail button{background:#fff!important;border-radius:50%!important}
+.alumni-rail img{border-radius:50%!important}
+@media(max-width:1100px){.footer-lead{grid-template-columns:160px 1fr 1fr;gap:30px}}
+@media(max-width:720px){.footer-lead{padding:50px 0 30px;grid-template-columns:1fr;gap:24px}.footer-links{padding:30px 0;grid-template-columns:1fr 1fr;gap:20px}.footer-social{grid-column:auto}}
