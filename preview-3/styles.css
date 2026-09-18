@@ -157,3 +157,34 @@ main img{border-radius:var(--image-radius)}
 .institution-feature-image{border-radius:0}
 .brand img,.global-logos img,.corporate-network img,footer img{border-radius:0}
 @media(max-width:720px){:root{--image-radius:12px}}
+
+/* Global typography and breathing-space pass */
+body,button,input,select{font-family:Roboto,Arial,sans-serif}
+h1,h2,h3,.metric b,.outcome-stats b,.glance-content b,.sports-intro b,.alumni-story blockquote{font-family:Roboto,Arial,sans-serif}
+h1 em,h2 em,h3 em{font-family:Georgia,serif;font-weight:400}
+.hero h1{font-size:clamp(3.25rem,5.2vw,5rem)}
+.section h2,.virtual-tour h2,.sports-focus h2{font-size:clamp(2.5rem,4.1vw,3.9rem);line-height:1.08;letter-spacing:-.045em}
+.section{padding-top:clamp(82px,7vw,118px);padding-bottom:clamp(82px,7vw,118px)}
+.section-label{margin-bottom:28px}
+
+/* Continuous corporate logo marquee */
+.corporate-network{overflow:hidden;padding:28px 0;background:#fff;color:var(--navy)}
+.network-heading{display:flex;align-items:end;justify-content:space-between;gap:30px;padding:0 28px 20px}.network-heading p{margin:0!important;color:var(--red-dark)!important;font-size:.75rem!important;font-weight:800;letter-spacing:.13em}.network-heading span{font-size:.82rem;color:var(--muted)}
+.logo-marquee{overflow:hidden;border-top:1px solid #eadde0;border-bottom:1px solid #eadde0;padding:12px 0;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.logo-marquee-track{display:flex!important;grid-template-columns:none!important;width:max-content;gap:10px!important;animation:logo-flow 28s linear infinite;will-change:transform}.logo-marquee:hover .logo-marquee-track{animation-play-state:paused}
+.logo-tile{width:175px;height:76px;flex:0 0 175px;display:grid;place-items:center;background:#fff;border:1px solid #eee3e6;border-radius:10px}.logo-tile img{width:100%!important;height:100%!important;object-fit:contain!important;padding:13px!important;border:0!important}.logo-tile.wordmark{font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:#25324a}
+@keyframes logo-flow{to{transform:translateX(calc(-50% - 5px))}}
+
+/* LPU-inspired, two-direction sports image rails */
+.sports-focus{overflow:hidden;background:#6f0e22;color:#fff;padding-bottom:clamp(82px,7vw,118px)}
+.sports-title{display:grid;grid-template-columns:1.2fr .8fr;gap:clamp(40px,7vw,110px);align-items:end;padding-bottom:56px}.sports-title .section-label{margin-bottom:28px}.sports-intro>p{color:#f1c9d1;font-size:1rem;max-width:540px;margin:0 0 26px}.sports-intro>div{display:flex;align-items:baseline;gap:13px;margin-bottom:24px}.sports-intro b{font-size:3rem;line-height:.9}.sports-intro span{font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;color:#f4d8de}.sports-intro .button{width:max-content}
+.sports-rails{display:grid;gap:10px}.sports-rail{overflow:hidden}.sports-track{display:flex;width:max-content;gap:10px;will-change:transform}.sports-track-left{animation:sports-left 42s linear infinite}.sports-track-right{animation:sports-right 46s linear infinite;transform:translateX(calc(-50% - 5px))}.sports-rails:hover .sports-track{animation-play-state:paused}
+.sports-track figure{position:relative;flex:0 0 330px;width:330px;height:245px;margin:0;overflow:hidden;border-radius:var(--image-radius);background:#300610}.sports-track figure.wide{flex-basis:500px;width:500px}.sports-track img{width:100%;height:100%;object-fit:cover;border-radius:inherit;transition:transform .7s var(--ease),filter .45s}.sports-track figcaption{position:absolute;inset:auto 0 0;padding:48px 20px 18px;background:linear-gradient(0deg,rgba(32,3,10,.84),transparent);font-size:.78rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;opacity:0;transform:translateY(10px);transition:.35s}.sports-track figure:hover img{transform:scale(1.075);filter:saturate(1.08)}.sports-track figure:hover figcaption{opacity:1;transform:none}
+@keyframes sports-left{to{transform:translateX(calc(-50% - 5px))}}@keyframes sports-right{to{transform:translateX(0)}}
+
+/* Calmer newsroom composition */
+.updates{background:#fbf7f8}.updates-head{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(45px,8vw,120px);align-items:end;margin-bottom:48px!important}.updates-head .section-label{margin-bottom:24px}.updates-head p{max-width:620px;margin:22px 0 0;color:var(--muted);font-size:1rem}.updates-actions{display:flex;flex-direction:column;align-items:flex-end;gap:24px}.update-tabs{margin:0!important;justify-content:flex-end}.updates-all{padding:11px 16px!important;background:var(--red);color:#fff!important;border-radius:2px!important;min-height:44px}.update-grid{gap:18px!important}.update-grid article{border-radius:var(--image-radius);box-shadow:0 12px 35px rgba(74,12,29,.07)!important}.update-grid article>div{padding:30px!important}.update-grid .feature-update{background:#6f0e22!important}.update-grid h3{margin:16px 0 26px;line-height:1.32}.update-grid article:not(.feature-update){grid-template-columns:210px 1fr!important}.compact-updates{display:none!important}
+
+@media(max-width:900px){.sports-title,.updates-head{grid-template-columns:1fr}.updates-actions{align-items:flex-start}.update-tabs{justify-content:flex-start}.sports-track figure{flex-basis:285px;width:285px;height:215px}.sports-track figure.wide{flex-basis:420px;width:420px}.network-heading{align-items:flex-start;flex-direction:column;gap:4px}.update-grid article:not(.feature-update){grid-template-columns:180px 1fr!important}}
+@media(max-width:720px){.hero h1{font-size:3rem}.section h2,.virtual-tour h2,.sports-focus h2{font-size:2.35rem}.sports-title{padding-left:20px;padding-right:20px;padding-bottom:38px}.sports-intro .button{width:100%}.sports-track figure,.sports-track figure.wide{flex-basis:76vw;width:76vw;height:220px}.updates-head{margin-bottom:34px!important}.updates-actions{gap:18px}.update-tabs{width:100%;justify-content:flex-start}.update-grid article:not(.feature-update){display:flex!important}.update-grid article>div{padding:24px!important}.network-heading{padding-left:20px;padding-right:20px}.logo-tile{width:145px;flex-basis:145px;height:68px}}
+@media(prefers-reduced-motion:reduce){.sports-track,.logo-marquee-track{animation-play-state:paused!important}.sports-rail,.logo-marquee{overflow-x:auto}}
