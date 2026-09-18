@@ -46,6 +46,12 @@ document.querySelectorAll('.notice-tabs button').forEach(button=>button.addEvent
   button.classList.add('active');
   document.querySelectorAll('.notice-track article').forEach(card=>card.classList.toggle('hidden',button.dataset.notice!=='all'&&card.dataset.kind!==button.dataset.notice));
 }));
+document.querySelectorAll('.update-tabs button').forEach(button=>button.addEventListener('click',()=>{
+  document.querySelectorAll('.update-tabs button').forEach(item=>{item.classList.remove('active');item.setAttribute('aria-selected','false')});
+  button.classList.add('active');button.setAttribute('aria-selected','true');
+  const kind=button.dataset.update||'all';
+  document.querySelectorAll('.update-grid article').forEach(card=>card.hidden=kind!=='all'&&card.dataset.kind!==kind);
+}));
 
 function moveAchievers(direction){
   const track=document.querySelector('.achiever-track');

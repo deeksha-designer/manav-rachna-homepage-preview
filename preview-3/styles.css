@@ -283,3 +283,7 @@ footer{padding-top:96px!important;padding-bottom:18px!important;row-gap:24px!imp
 .alumni-rail img{border-radius:50%!important}
 @media(max-width:1100px){.footer-lead{grid-template-columns:160px 1fr 1fr;gap:30px}}
 @media(max-width:720px){.footer-lead{padding:50px 0 30px;grid-template-columns:1fr;gap:24px}.footer-links{padding:30px 0;grid-template-columns:1fr 1fr;gap:20px}.footer-social{grid-column:auto}}
+.institution-feature-content>a{background:#fff!important;color:var(--red)!important;border:0!important;padding:12px 18px!important;border-radius:2px!important;width:max-content!important}
+.institution-feature,.institution-feature-image,.institution-photos img{border-radius:0!important}
+.outcomes .outcome-top>p{color:#fff!important}
+.update-grid article[hidden]{display:none!important}
