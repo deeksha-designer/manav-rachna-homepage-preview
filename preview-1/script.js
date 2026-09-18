@@ -19,7 +19,7 @@ if(campusVideo&&campusPlay){
   campusPlay.addEventListener('click',async()=>{
     walkthrough.classList.add('is-playing');
     document.body.classList.add('video-modal-open');
-    try{await campusVideo.play()}catch(error){closeCampusVideo()}
+    try{await campusVideo.play()}catch(error){/* Keep the modal open; video controls remain available for manual playback. */}
   });
   campusClose?.addEventListener('click',closeCampusVideo);
   campusVideo.addEventListener('ended',closeCampusVideo);
