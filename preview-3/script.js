@@ -55,12 +55,26 @@ function moveAchievers(direction){
 document.querySelector('.achiever-prev')?.addEventListener('click',()=>moveAchievers(-1));
 document.querySelector('.achiever-next')?.addEventListener('click',()=>moveAchievers(1));
 
+const programmeImages={
+  all:['assets/fresh-engineering-lab.png','assets/indian/notice-business.png','assets/indian/notice-law.png','assets/indian/notice-design.png','assets/indian/research-biotech.png','assets/indian/news-culture.png','assets/indian/research.png','assets/indian/news-convocation.png'],
+  ug:['assets/indian/academic-ug.png','assets/indian/campus-community-2026.png','assets/indian/notice-law.png','assets/indian/notice-design.png','assets/indian/research-biotech.png','assets/indian/news-culture.png','assets/indian/research.png','assets/indian/news-convocation.png'],
+  pg:['assets/indian/research-incubator.png','assets/indian/academic-pg.png','assets/indian/notice-law.png','assets/indian/notice-design.png','assets/indian/research-biotech.png','assets/indian/news-culture.png','assets/indian/research.png','assets/indian/news-convocation.png'],
+  doctoral:['assets/indian/research.png','assets/indian/research-incubator.png','assets/indian/notice-law.png','assets/indian/research-biotech.png','assets/indian/academic-phd.png','assets/indian/research.png','assets/indian/research-biotech.png','assets/indian/research-incubator.png'],
+  online:['assets/indian/academic-pg.png','assets/indian/notice-business.png','assets/indian/notice-law.png','assets/indian/notice-design.png','assets/indian/news-culture.png','assets/indian/news-convocation.png','assets/indian/research.png','assets/indian/academic-ug.png']
+};
+function updateProgrammeCards(level){
+  document.querySelectorAll('.discipline-grid a').forEach((card,index)=>{
+    card.hidden=level!=='all'&&!card.dataset.levels.split(' ').includes(level);
+    const image=programmeImages[level]?.[index];
+    if(image) card.style.setProperty('--card-image',`url('${image}')`);
+  });
+}
 document.querySelectorAll('.program-tabs button').forEach(button=>button.addEventListener('click',()=>{
   document.querySelectorAll('.program-tabs button').forEach(item=>item.classList.remove('active'));
   button.classList.add('active');
   document.querySelectorAll('.program-tabs button').forEach(item=>item.setAttribute('aria-selected',String(item===button)));
   const level=button.dataset.level;
-  document.querySelectorAll('.discipline-grid a').forEach(card=>card.hidden=level!=='all'&&!card.dataset.levels.split(' ').includes(level));
+  updateProgrammeCards(level);
   const select=document.querySelector('.finder-form select');
   if(select){const labels={all:'All study levels',ug:'Undergraduate',pg:'Postgraduate',doctoral:'Doctoral',online:'Online'};select.value=labels[level];}
 }));
