@@ -88,7 +88,7 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 .video-close:hover{background:#922225;transform:scale(1.08)}
 .video-modal-open{overflow:hidden}
 .walkthrough .play-button{font-size:24px;font-weight:400;line-height:1}.walkthrough .play-button span{display:block;margin-left:5px;transform:none}.walkthrough .play-button:hover{background:#922225;box-shadow:0 12px 32px rgba(0,0,0,.3)}
-.campus-modal{position:fixed;left:50%;top:50%;width:min(980px,88vw);padding:18px;background:#fff;border:1px solid rgba(178,43,46,.65);border-radius:24px;z-index:121;opacity:0;visibility:hidden;transform:translate(-50%,-46%) scale(.96);box-shadow:0 28px 90px rgba(0,0,0,.45);transition:opacity .3s ease,transform .3s ease}
+.campus-modal{position:fixed;left:50%;top:50%;width:min(980px,88vw);padding:0;background:#fff;border:1px solid rgba(255,255,255,.88);border-radius:24px;z-index:121;opacity:0;visibility:hidden;overflow:hidden;transform:translate(-50%,-46%) scale(.96);box-shadow:0 28px 90px rgba(0,0,0,.45);transition:opacity .3s ease,transform .3s ease}
 .campus-video{position:relative;inset:auto;display:block;width:100%;height:auto;max-height:72vh;object-fit:contain;border-radius:14px;background:#101114;opacity:1;visibility:visible;transform:none;box-shadow:none}
 .walkthrough.is-playing .campus-modal{opacity:1;visibility:visible;transform:translate(-50%,-50%) scale(1)}
 .walkthrough.is-playing .campus-modal .campus-video{position:relative;left:auto;top:auto;width:100%;height:auto;max-height:72vh;opacity:1;visibility:visible;transform:none}
@@ -96,6 +96,8 @@ footer{background:#0d0f13;color:#fff}.footer-enquiry{border-color:#2c3037}.foote
 .walkthrough:not(.is-playing) .video-close{pointer-events:none}
 .video-close:hover{background:#b22b2e;color:#fff;transform:scale(1.06)}
 @media(max-width:700px){.campus-modal{width:92vw;padding:10px;border-radius:18px}.campus-video{border-radius:10px}.video-close{right:7px;top:7px;width:34px;height:34px;font-size:22px}}
+.walkthrough.is-playing:after{background:rgba(86,89,94,.58);backdrop-filter:blur(13px) saturate(.72)}
+@media(max-width:700px){.campus-modal{padding:0}.campus-video{border-radius:18px}}
 .walkthrough-shade,.walkthrough-copy,.walkthrough>img{transition:opacity .35s ease}
 
 /* Scroll-triggered section transitions */
